@@ -4,13 +4,13 @@ try {
 class RBCompiler extends Base {
   constructor(asc) {
     super(asc);
-    this.asc = this.lowerAllPinYinAndMakeItGlobal(asc);
+    this.asc = this.lowerAllPinYin(asc);
     return this;
   }
   rename(name) {
     return name && `${name.toLowerCase()}`;
   }
-  lowerAllPinYinAndMakeItGlobal(asc) {
+  lowerAllPinYin(asc) {
     for (let i = 0; i < asc.length; i++) {
       const item = asc[i];
       switch (item.op) {
